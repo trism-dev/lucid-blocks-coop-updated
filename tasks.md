@@ -4,9 +4,9 @@ Status is evidence-based; unchecked items are not shipped features.
 
 ## Current task
 
-**IN PROGRESS: Resolve current-build export errors.** Installer fixtures pass 34 assertions in both PowerShell versions. Actual export fails on unresolved game classes and resource errors; no playable artifact exists yet.
+**IN PROGRESS: Two-player compatibility negotiation and native loading guard.** Full mod package passed normal startup and 61-script checks; multiplayer gameplay remains unverified.
 
-Next: stage the required game interfaces without packaging recovered game resources, then verify mod startup against the original runtime.
+Next: reject mismatched peers before world synchronization; limit sessions to two total players; refuse unvalidated native patches before loading them.
 
 ## Steps
 

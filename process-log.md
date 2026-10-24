@@ -18,6 +18,10 @@ This is a running record for the requested final retrospective. Completion claim
 - Resumed on Sol with narrow local reads and sequential implementation work.
 - Discovered editor-generated .import changes; these need separation from intentional changes before committing.
 - Resumed the tooling writer to finish disposable install/rollback checks and ensure exports stage copies rather than mutating tracked imports.
+- Installer fixtures passed 34 assertions on a fresh parent run; checkpoint 1fd78c6 was committed and pushed to the compatibility branch.
+- Matching editor could read the original game pack, but native classes were initially absent because extension declarations referenced nested physical DLL paths. Staging the DLLs at those paths restored World, Steam, and SteamMultiplayerPeer in the probe.
+- A two-file raw GDScript/remap sentinel package loaded through the original mod loader. A subsequent full mod-only diagnostic PCK was created (55,233,380 bytes), avoiding recovered-resource conversion.
+- Full-package probe uncovered actual source incompatibilities: the world override omits LUCY/TORUS dimension constants and generator selection, and the entity override lacks get_water_flow used by current dropped items. Exit code 0 did not imply clean script compilation; the production builder must inspect logs before publishing an artifact.
 
 ## Cost lesson
 Initial exploration returned an oversized GitHub tree and unnecessarily large instruction/source outputs. Output size is not an exact usage accounting, but this was avoidable overhead. Future reads should be bounded before tool output reaches the conversation; keep implementation state in these files.

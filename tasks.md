@@ -4,9 +4,9 @@ Status is evidence-based; unchecked items are not shipped features.
 
 ## Current task
 
-**IN PROGRESS: durable private-region checkpoints and ownership validation.** User confirmed adoption and one-pass resumption. Admission59/native4/startup61 checks passed after the move.
+**BLOCKED: legacy migration owner-routing/data-preservation defect; two-round repair cap reached.** Current-format region tests pass21 fixture/28 runtime/startup62. Persistence source remains uncommitted and must not be installed.
 
-Next: preserve complete region contents, write validated guest instance changes atomically on the host, and acknowledge only successful durable checkpoints.
+Next: begin a separately bounded legacy migration repair and regression; consume destination-owner handoff before load_chunks_old and preserve legacy keys until conversion succeeds. Then rereview before committing persistence.
 
 ## Steps
 

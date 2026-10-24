@@ -6,7 +6,7 @@ Status: implementation contract; current-version multiplayer is **not verified**
 
 Pin the runtime to Steam app 3495730, build 25451214, game 5.1.0, Windows x86-64, **Godot 4.6.0 double precision**, GodotSteam 4.17.1. `work/recovered/project.godot`, `work/logs/probe.txt`, and `work/gdblocks-source/extension_api.json` establish these versions. The generic engine guide's installed 4.7.2 editor is not the build tool for this game. Exact native ABI/source equivalence remains unverified; record source commit, godot-cpp commit, API hash, compiler, engine hash, and build flags before native output is accepted. Target executable and original DLL hashes are in `authorization.md`.
 
-Engine guide: `../_pipeline/engines/godot.md`. Use headless import, per-script `--check-only`, and a SceneTree test runner with explicit `quit(code)`. Record output and assertions as well as exit code: Godot can ignore unknown flags. No assumed GUT/gdUnit installation and no automatic editor download. Do not hand-edit open scenes/resources; keep `.godot`, exports, original saves, and recovery output out of git.
+Engine guide: `../guide.md`. Use headless import, per-script `--check-only`, and a SceneTree test runner with explicit `quit(code)`. Record output and assertions as well as exit code: Godot can ignore unknown flags. No assumed GUT/gdUnit installation and no automatic editor download. Do not hand-edit open scenes/resources; keep `.godot`, exports, original saves, and recovery output out of git.
 
 Ownership and tool boundaries:
 

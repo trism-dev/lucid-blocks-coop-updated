@@ -25,3 +25,21 @@ This is a running record for the requested final retrospective. Completion claim
 
 ## Cost lesson
 Initial exploration returned an oversized GitHub tree and unnecessarily large instruction/source outputs. Output size is not an exact usage accounting, but this was avoidable overhead. Future reads should be bounded before tool output reaches the conversation; keep implementation state in these files.
+
+## Startup checkpoint f10f19f
+- Fixed missing world dimensions/generators, Entity water-flow API and dexterity, wrong OfflineMultiplayerPeer API call, and absent fallback capsule resources.
+- Full normal-Main startup checked 61 scripts plus targeted assertions. Strict error gate initially found a leak also present in vanilla: on-screen keyboard KeyListHandler. Probe-only cleanup freed that member; no production suppression or base-game resource replacement.
+- Worker final fixture results: 42 assertions in Windows PowerShell and pwsh. Candidate fingerprint and logs are recorded in playtest.md.
+
+## Next persistence investigation
+- submit_guest_world_patch must cross-check dimension/owner against sender state, not trust a supplied instance key alone.
+- _merge_world_patch_into_save writes a compatibility dictionary, not current region files. World.save_chunk_data/load_chunk_data provide existing gzip JSON format and owner namespaces.
+- Patch payloads use prefixed dictionaries. Never write those directly as region files: merge with complete target region content or transmit validated serialized region payloads.
+- Existing flush acknowledgement is sent before durable storage. Host must acknowledge after successful atomic region checkpoint, and transition/disconnect must await that acknowledgement.
+- Relevant manager functions: submit_guest_world_patch, _merge_world_patch_into_save, _await_guest_world_patch_flush_for_instance; world functions: save_chunk_data, load_chunk_data, _get_dimension_save_namespace. Runtime/source probe still needed for exact region merge and block-ID semantics.
+
+## Session admission investigation
+- Added shared SceneMultiplayer authentication before peer_connected/world RPC admission, LAN one-remote limit and Steam two-total lobby limit, and a native DLL validation guard before extension loading.
+- Sandbox loopback produced misleading failures: ENet socket creation returned OK but packets never reached the other peer. An empty-project control with explicit polling failed inside sandbox and passed outside it. No firewall settings were changed.
+- Elevated actual regression run proved matching connection and reconnect slot reuse, but found rejected-client failure callbacks were not invoked after local disconnect. Fixed explicit failure handling before disconnect and preserved the client/host role and rejection reason.
+- Added typed validation checks and precise malformed-hello regression cases. Native guard assertions passed; production source startup passed independently. Final admission rerun is pending; these changes are not yet a verified checkpoint.

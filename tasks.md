@@ -4,9 +4,9 @@ Status is evidence-based; unchecked items are not shipped features.
 
 ## Current task
 
-**IN PROGRESS: Two-player compatibility negotiation and native loading guard.** Full mod package passed normal startup and 61-script checks; multiplayer gameplay remains unverified.
+**IN PROGRESS: durable private-region checkpoints and ownership validation.** User confirmed adoption and one-pass resumption. Admission59/native4/startup61 checks passed after the move.
 
-Next: reject mismatched peers before world synchronization; limit sessions to two total players; refuse unvalidated native patches before loading them.
+Next: preserve complete region contents, write validated guest instance changes atomically on the host, and acknowledge only successful durable checkpoints.
 
 ## Steps
 
@@ -15,7 +15,7 @@ Next: reject mismatched peers before world synchronization; limit sessions to tw
 - [ ] Recover current game locally and inventory override differences. Check: recovery log and compatibility report.
 - [ ] Complete architecture.md from actual game interfaces. Check: authority, identity, persistence, and test contracts specified.
 - [ ] Add Windows build/install/rollback scripts and regression checks. Check: build leaves install unchanged; round-trip install on disposable fixture.
-- [ ] Guard native loading and negotiate two-player compatibility. Check: mismatches rejected before world state.
+- [x] Guard native loading and negotiate two-player compatibility. Check: mismatches rejected before world state.
 - [ ] Fix current-version scripts and README defects. Check: current game load and per-defect regressions.
 - [ ] Verify Steam joining/invites/reconnect. Check: two authenticated accounts and failure scenarios.
 - [ ] Implement independent terrain and dimension authority. Check: separated players and dimension transitions.

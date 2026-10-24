@@ -1,12 +1,12 @@
 # Verification evidence
 
-## 2026-10-23: baseline inventory
-- Steam manifest: app 3495730, build 25451214, depot manifest 7072406399823411834.
-- Executable metadata: 5.1.0.0; SHA-256 fingerprints recorded in authorization.md.
-- Original installation contained the executable and three DLLs; no mods folder.
-- Fork created at https://github.com/trism-dev/lucid-blocks-coop-updated; local branch fix/current-build-compatibility.
-- GDRETools v2.7.4 downloaded from the official GitHub release. Help verified using an isolated APPDATA profile under work/.
-- Gameplay, multiplayer, save persistence, Steam invites, and rollback: NOT YET TESTED.
+## 2026-10-24: pre-pause admission result and layout adoption
+- Last run began before the user's pause request and was collected during adoption; no implementation resumed.
+- PASS: admission59, native guard4, startup61. Logs: work/build-logs/9ea0857f63304b5894e5dfea7f0c5964/runtime.stdout.log.
+- Artifact SHA256: D9AB22FBB5B0F9C52F6D7A9F97933925799F951E47B608E49DD1AA0645DF9FEA. Working code/tests remain uncommitted.
+- Original-path evidence predates move to Godot/Lucid Blocks. No post-move runtime test performed during documentation-only adoption; rerun from new directory on approved resume.
+- Workflow parse check: PARSE OK for C:/Work/.claude/workflows/game-dev.js. Current STATE.md is 11 nonblank lines; old project path absent, new nested repository present.
+- Implementation paused pending user's confirmation and explicit resume. Real Steam invites, gameplay, private persistence and remaining features unverified.
 
 ## 2026-10-24: resumed verification
 - Global execution/progress preferences saved to C:/Users/trist/.codex/AGENTS.md.

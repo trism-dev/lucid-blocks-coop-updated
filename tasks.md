@@ -4,9 +4,9 @@ Status is evidence-based; unchecked items are not shipped features.
 
 ## Current task
 
-**IN PROGRESS: current combat/gel/reconnect regressions.** Persistence and legacy migration passed28 fixture/43 native/startup62 checks plus targeted review.
+**PAUSED: authorized combat/fixture repair cycles exhausted.** Round1 passed32 assertions but failed strict offline Steam call; round2 exposed optional-base/required-subclass attack signature mismatch and premature headless softbody sampling. Persistence checkpoint b395d39 passed28 fixture/43 native/startup62 checks.
 
-Next: restore current Entity/Gel combat interfaces and mini mesh indices, fix terminal reconnect UI, then verify targeted behavior.
+Latest: rendered verification50/2 failed under OpenGL; target requires Forward Plus. All authorized cycles exhausted; next requires renewed bounded Forward+/Vulkan verification. Native baseline compiled (work/native-baseline-output), but no runtime/installation claim. No task process remains.
 
 ## Steps
 

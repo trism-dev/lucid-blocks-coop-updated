@@ -23,3 +23,12 @@
 - Base game itself leaks its on-screen keyboard KeyListHandler at shutdown. The unpublished test-only probe frees that exact helper before quitting; production mod does not alter base-game cleanup.
 - This establishes startup/interface compatibility only. Multiplayer, persistence, exploration, Steam invitations, and ender storage remain unverified.
 
+
+## 2026-10-24: pre-pause admission result and layout adoption
+- Last run began before the user's pause request and was collected during adoption; no implementation resumed.
+- PASS: admission59, native guard4, startup61. Logs: work/build-logs/9ea0857f63304b5894e5dfea7f0c5964/runtime.stdout.log.
+- Artifact SHA256: D9AB22FBB5B0F9C52F6D7A9F97933925799F951E47B608E49DD1AA0645DF9FEA. Working code/tests remain uncommitted.
+- Original-path evidence predates move to Godot/Lucid Blocks. No post-move runtime test performed during documentation-only adoption; rerun from new directory on approved resume.
+- Workflow parse check: PARSE OK for C:/Work/.claude/workflows/game-dev.js. Current STATE.md is 11 nonblank lines; old project path absent, new nested repository present.
+- Implementation paused pending user's confirmation and explicit resume. Real Steam invites, gameplay, private persistence and remaining features unverified.
+

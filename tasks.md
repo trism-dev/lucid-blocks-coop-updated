@@ -4,9 +4,9 @@ Status is evidence-based; unchecked items are not shipped features.
 
 ## Current task
 
-**BLOCKED: legacy migration owner-routing/data-preservation defect; two-round repair cap reached.** Current-format region tests pass21 fixture/28 runtime/startup62. Persistence source remains uncommitted and must not be installed.
+**IN PROGRESS: current combat/gel/reconnect regressions.** Persistence and legacy migration passed28 fixture/43 native/startup62 checks plus targeted review.
 
-Next: begin a separately bounded legacy migration repair and regression; consume destination-owner handoff before load_chunks_old and preserve legacy keys until conversion succeeds. Then rereview before committing persistence.
+Next: restore current Entity/Gel combat interfaces and mini mesh indices, fix terminal reconnect UI, then verify targeted behavior.
 
 ## Steps
 
